@@ -1,0 +1,28 @@
+/* ESTO ES UN COMENTARIO */
+h1 {
+    font-family:Georgia, 'Times New Roman', Times, serif, 'Times New Roman', Times, serif, Helvetica, sans-serif ;
+    color: rgb(250, 100, 0);
+    font-size: 25px;
+    text-align: center;
+}
+
+p{
+    font-family: 'Times New Roman', Times, serif;
+    background-color: rgb(182, 94, 59);
+    color: azure;
+}
+h2 {
+    font-family:Georgia, 'Times New Roman', Times, serif, 'Times New Roman', Times, serif, Helvetica, sans-serif ;
+    color: rgb(250, 100, 0);
+    font-size: 25px;
+}
+hr{
+    height: 1px;
+    background-color: black; color: black;
+    }
+h3 {
+    font-family:Georgia, 'Times New Roman', Times, serif, 'Times New Roman', Times, serif, Helvetica, sans-serif ;
+    color: rgb(250, 100, 0);
+    font-size: 25px;
+}
+ 
