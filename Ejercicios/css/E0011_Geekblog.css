@@ -1,48 +1,148 @@
- *{
+/* Reset de los estilos por defecto */
+*{
     margin: 0;
     padding: 0;
+}
+
+/* Selectores de etiquetas */
+body{
+    font-family: "Noto Sans", sans-serif;
+}
+
+header{
+    width: 100%;
+    /* height:fit-content; */
+    background-color: rgb(32, 83, 117);
+    color:white;
+}
+nav{
+    background-color: #112b3c;
+    color:white;
+    text-align: center;
+}
+
+
+nav li{
+    display: inline-block;
+    padding: 6px;
+    border:1px solid white;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    
+}
+nav li a{
+    color: white;
+    text-decoration: none;
+}
+
+main{
+    margin-top: 30px;
+}
+
+article{
+    margin-bottom: 50px;
+    border-bottom: 2px dashed rgb(228, 227, 227);
+    padding-bottom: 40px;
+}
+
+article p{
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+article:last-child{
+    border:none;
+}
+ 
+h2{
+    margin-top:20px;
+    margin-bottom:20px;
+    font-weight: 500;
+}
+
+footer{
+    background-color: #112b3c;
+    color:white;
+    padding: 10px;
+
+}
+/* Selectores de punto */
+
+.logo{
+    text-align: center;
+    font-size: 30px;
+    padding:20px;
+}
+
+.logo img{
+    width:40px;
+}
+.logo a{
+    text-decoration: none;
+    color:white;
+}
+
+.subtitulo{
+    text-align: center;
+    font-weight: 500;
+    padding-bottom: 20px;
+}
+
+.contenedor {
+    width: 960px;
+    height: 100%;
+    /* border: 1px solid blue; */
+    margin: 0 auto;
+}
+
+.read-full{
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.read-full a{
+    color: rgb(32, 83, 117);
+}
+.read-full a:hover{
+    color: white;
+    background-color: rgb(32, 83, 117);
+}
+
+.pastilla{
+    background-color: rgba(207, 203, 203, 0.555);
+    padding: 10px;
+    border: 1px solid rgb(221, 215, 215);
+    border-radius: 5px;
+    margin-right: 12px;
+}
+
+.pastilla a{
+    color: black;
+    text-decoration: none;
+}
+
+.pastilla:hover{
+     background-color: rgb(32, 83, 117);
+    
+}
+.pastilla a:hover{
+    color: white;
+}
+.pie-enlace{
+   padding:10px;
+}
+
+
+.pie-enlace a{
+    color:tomato;
    
- }
- body{
-    font-family: 'Times New Roman', Times, serif;
- }
+}
 
- header{
-             text-align: center;
-            background-color:rgba(154, 87, 216, 0.452);
-        }
-        .contenedor{
-            
-            margin: 0 auto;
-             text-align: center;
-           
-        }
-        .cabecera{
-            size: 50px;
-        }
-        nav{
-            text-align: center;
-            background-color: aquamarine;
-            
-        }
-        nav li{
-            display: inline-block;
-            padding: 6px;
-            border: 1px solid black;
-            color: blue;
-            margin-top: 10px;
-            margin-bottom: 10px;
-            margin-right: 10px;
-        } 
-        
+.pie-enlace a:hover{
+    color: rgb(32, 83, 117) ;
+    background-color: tomato;
+    text-decoration: none;
 
-        main{
-             text-align: center; nn
-           
-        }
-        footer{
-            text-align: center;
-            
-            background-color: aqua;
-        }
-
+}
