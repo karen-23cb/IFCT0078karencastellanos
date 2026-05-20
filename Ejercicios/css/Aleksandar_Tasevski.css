@@ -1,0 +1,70 @@
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background-color: rgb(247, 243, 239);
+}
+
+header{
+    padding-top: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgb(218, 208, 208);
+}
+
+h1{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+
+.contenedor{
+    width: 660px;
+    height: 400px;
+    margin: 0 auto;
+
+}
+.alek-redondo{
+    width: 200px;
+    height:200px ;
+    border-radius:200px ;
+}
+
+.subtitulo{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: rgb(143, 141, 140);
+}
+
+.primer-parrafo{
+    color: rgb(71, 71, 68);
+}
+
+
+.primer-recuadro{
+    background-color: rgba(153, 147, 147, 0.103);
+    border: 1px solid rgba(241, 232, 232, 0.493);
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.pastilla{
+    background-color: rgba(235, 227, 227, 0.938);
+    border: 1px solid rgba(231, 224, 224, 0.493);
+    border-radius: 5px;
+}
+
+.segundo-recuadro{
+    background-color: rgba(153, 147, 147, 0.103);
+    border: 1px solid rgba(241, 232, 232, 0.493);
+    border-radius: 5px;
+}
+
+
+       
+    
+        
