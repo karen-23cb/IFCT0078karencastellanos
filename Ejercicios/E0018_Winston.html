@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        html {
+            font-size: 16px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            border: 1rem solid rgb(123, 22, 255);
+            min-height: 100vh;
+        }
+
+        main {
+            width: 80%;
+            margin:0 auto;
+        }
+
+        nav {
+            text-align: right;
+            color: rgb(123, 22, 255);
+        }
+
+        nav li {
+            display: inline-block;
+            margin-right: 1rem;
+        }
+
+        h1 {
+            font-size: 5vw;
+            line-height: 1;
+            margin-bottom: 3rem;
+        }
+        footer{
+            width: 80%;
+            margin:2rem auto;
+        }
+
+        /* Estilos de Clase */
+
+        .logo {
+            color: rgb(123, 22, 255);
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 1rem;
+            margin-top: 2rem;
+        }
+
+        .contenedor {
+            max-width: 60vw;
+            margin: 0 auto;
+        }
+
+        .autor {
+            margin-top: 2.2rem;
+            margin-bottom: 2.2rem;
+            text-align: center;
+        }
+
+        .autor img {
+            width: 50px;
+            border-radius: 25px;
+            border: 2px solid black;
+        }
+
+        .negrita {
+            font-weight: bold;
+        }
+
+        .punto {
+            color: rgb(123, 22, 255);
+        }
+        .texto-largo{
+            line-height: 1.5;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="contenedor">
+        <header>
+            <div class="logo">
+                Hugo Winston Theme
+            </div>
+            <nav>
+                <ul>
+                    <li>Home</li>
+                    <li>Blog</li>
+                    <li>About</li>
+                    <li>Tags</li>
+                </ul>
+            </nav>
+            <div class="autor">
+                <img src="Imagenes_2/winston_author.png" alt="">
+                <p><span class="negrita"> Winston Smith</span> Writer & Futurist</p>
+            </div>
+        </header>
+        <main>
+
+            <h1>You don't start out writing good stuff<span class="punto">.</span></h1>
+            <p class="texto-largo">
+                The hallway smelt of boiled cabbage and old rag mats. At one end of it a coloured poster, too large for
+                indoor display, had been tacked to the wall. It depicted simply an enormous face, more than a metre
+                wide: the face of a man of about forty-five, with a heavy black moustache and ruggedly handsome
+                features. Winston made for the stairs. It was no use trying the lift.
+            </p>
+        </main>
+        <footer>
+            <p class="iconos">
+                <span> <i class="fa-brands fa-twitter"></i> </span>
+                <span><i class="fa-brands fa-linkedin"></i> </span>
+                <span><i class="fa-brands fa-github"></i></span>
+            </p>
+
+        </footer>
+
+    </div>
+</body>
+
+</html>
