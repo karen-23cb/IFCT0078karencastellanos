@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduccion a Flex</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+
+        .contenedor {
+            display: flex;
+            flex-direction: row;
+
+            justify-content: center;
+            align-items: center;
+
+
+
+
+            border: 2px solid red;
+            box-sizing: border-box;
+            padding: 1rem;
+            height: 100vh;
+
+            gap: 1rem;
+
+
+
+
+
+        }
+
+        .contenedor div {
+            height: 200px;
+            width: 200px;
+            border: 1px solid blue;
+            font-size: 3rem;
+
+
+
+
+
+        }
+
+        .numero {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+        .uno{
+            flex-grow: 1;
+            flex-basis: 800px;
+        }
+
+        .dos{
+            flex-shrink: 3;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="contenedor">
+        <div class="numero dos">1</div>
+        <div class="numero">2</div>
+        <div class="numero uno">3</div>
+        <div class="numero">4</div>
+        <div class="numero">5</div>
+        <div class="numero dos">6</div>
+        <div class="numero">7</div>
+        <div class="numero uno">8</div>
+        <div class="numero">9</div>
+
+    </section>
+
+</body>
+
+</html>
