@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codepen-Contenedores sencillos ejemplo rapido</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: rgb(32, 27, 27);
+        }
+
+        .contenedor{
+            padding-top: 7rem;
+            margin: 0 auto;
+            width: 80vw;
+            color: white;
+            text-align: center;
+        }
+
+        .cajas{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 1.4rem;
+
+            padding-top: 5rem;  
+
+
+
+        }
+
+        section{
+            max-width: 15rem;
+
+        }
+
+        .icono{
+            font-size: 2.5rem;
+            padding-bottom: 1rem;
+
+        }
+
+        .texto{
+            font-size: 1rem;
+            line-height: 1.4;
+
+        }
+
+
+
+
+
+    </style>
+
+
+</head>
+
+
+
+<body>
+    <div class="contenedor">
+        <h1>This is an info-box</h1>
+
+        <div class="cajas">
+
+            <section>
+                <div class="icono"> <i class="fa-solid fa-star"></i></div>
+                    <p class="texto">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci incidunt, laudantium nostrum minus
+                    fuga aut dolore fugit cupiditate qui.</p>
+                
+            </section>
+
+            <section>
+
+
+                <div class="icono"><i class="fa-solid fa-thumbs-up"></i></div>
+                    
+                    <p class="texto">Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Integer posuere erat a ante
+                    venenatis dapibus posuere velit aliquet.</p>
+                
+            </section>
+
+            <section>
+                <div class="icono"><i class="fa-solid fa-check"></i> </div>
+                    
+                    <p class="texto">Donec sed odio dui. Cras mattis consectetur purus sit amet fermentum. Nullam id dolor id nibh
+                    ultricies
+                    vehicula ut id elit.</p>
+                
+            </section>
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+</body>
+
+</html>
