@@ -1,53 +1,67 @@
 <!DOCTYPE html>
-<html lang="es">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Introduccion a Grid CSS</title>
-
+    <title>Introducción a grid css</title>
     <style>
-        .contenedor {
-            display: grid;
+        .contenedor{
+            
+            display:grid;
             grid-template-columns: 1fr 2fr 1fr;
             gap: 10px;
 
-
         }
 
-        .contenedor div {
+        .contenedor div{
             border: 1px solid blue;
-            height: 200px;
-
+            height:200px;
         }
 
+        /* Areas */
         .areas{
-            display: grid;
+            display:grid;
             grid-template-areas: 
-            "cabecera   cabecera cabecera"
-            "lateral    cuerpo   cuerpo"
-            "pie        pie      pie ";
+            "cabecera cabecera cabecera"
+            "lateral  cuerpo   derecha"
+            "pie      pie      pie";
         }
-
         .inicio{
             grid-area:cabecera;
-
+            height: 100px;
+            background-color: aqua;
         }
-
-        .columna 1{
+        .col1{
             grid-area:lateral;
+            height: 400px;
+            background-color: rgb(243, 207, 60); 
+                     
         }
+        .col2{
+            grid-area:cuerpo;
+            height: 400px;
+            background-color: rgb(214, 239, 239);            
+        }
+        .col3{
+            grid-area:derecha;
+            height: 400px;
+            background-color: rgb(139, 227, 152);               
+        }
+        .final{
+            grid-area:pie;
+            height: 100px;
+            background-color: rgb(31, 247, 35);            
+        }
+
+
     </style>
 </head>
-
 <body>
-
-
-
     <div class="areas">
         <div class="inicio">Cabecera</div>
-        <div class="columna 1">Lateral</div>
-        <div class="columna 2">Cuerpo</div>
+        <div class="col1">Lateral</div>
+        <div class="col2">Cuerpo</div>
+        <div class="col3">Derecha</div>
         <div class="final">Pie</div>
     </div>
     <div class="contenedor">
@@ -57,16 +71,13 @@
         <div>D</div>
         <div>E</div>
         <div>F</div>
+        <div>A</div>
+        <div>B</div>
+        <div>C</div>
         <div>D</div>
         <div>E</div>
-        <div>E</div>
-        <div>F</div>
-        <div>D</div>
-        <div>E</div>
-
     </div>
 
 
 </body>
-
 </html>
