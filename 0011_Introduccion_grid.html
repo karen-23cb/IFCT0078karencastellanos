@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,6 +21,7 @@
         /* Areas */
         .areas{
             display:grid;
+            grid-template-columns:minmax(100px,1fr) 7fr 1fr;
             grid-template-areas: 
             "cabecera cabecera cabecera"
             "lateral  cuerpo   derecha"
@@ -28,28 +29,28 @@
         }
         .inicio{
             grid-area:cabecera;
-            height: 100px;
+            height: 80px;
             background-color: aqua;
         }
         .col1{
             grid-area:lateral;
-            height: 400px;
+            height: 300px;
             background-color: rgb(243, 207, 60); 
                      
         }
         .col2{
             grid-area:cuerpo;
-            height: 400px;
+            height: 300px;
             background-color: rgb(214, 239, 239);            
         }
         .col3{
             grid-area:derecha;
-            height: 400px;
+            height: 300px;
             background-color: rgb(139, 227, 152);               
         }
         .final{
             grid-area:pie;
-            height: 100px;
+            height: 80px;
             background-color: rgb(31, 247, 35);            
         }
 
