@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- https://www.myplan.healthy.la.gov/en -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthy Louisiana</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-family: "Nunito Sans", sans-serif;
+        }
+
+        h2 {
+            color: #004173;
+
+        }
+
+        /* ----------------------------
+           CONTENEDOR GENERAL
+        ----------------------------- */
+
+        .page {
+            display: grid;
+            grid-template-columns:
+                minmax(20px, 1fr) minmax(0, 1200px) minmax(20px, 1fr);
+
+            grid-template-areas:
+                ". contenido .";
+        }
+
+        /* ----------------------------
+           GRID GLOBAL DE 12 COLUMNAS
+        ----------------------------- */
+
+        .contenido {
+            grid-area: contenido;
+
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 24px;
+        }
+
+        /* ----------------------------
+           COLUMNAS
+        ----------------------------- */
+
+        .col-12 {
+            grid-column: span 12;
+        }
+
+        .col-8 {
+            grid-column: span 8;
+        }
+
+        .col-6 {
+            grid-column: span 6;
+        }
+
+        .col-4 {
+            grid-column: span 4;
+        }
+
+        .col-3 {
+            grid-column: span 3;
+        }
+
+        /* Cabecera */
+        header {
+            text-align: right;
+            font-size: 0.8rem;
+        }
+
+        header a {
+            text-decoration: none;
+            color: white;
+        }
+
+        header li {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+        }
+
+        .negro {
+            background-color: black;
+            color: white;
+
+        }
+
+        .sombra {
+            background-color: rgba(0, 0, 0, 0.488);
+        }
+
+
+
+        .foto {
+            background-image: url("img/healthy.jpg");
+            background-position: top;
+            background-size: cover;
+        }
+
+        .info {
+            /* height: 40vh; */
+            text-align: left;
+            background-color: rgba(255, 255, 255, 0.603);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-top: 12vh;
+            margin-bottom: 7vh;
+        }
+
+        .centrado {
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+        .borde {
+            border-right: 1px solid rgb(137, 137, 137);
+            padding: 0.5rem;
+        }
+        .relativo{
+            position:relative;
+        }
+        .logo{
+            position: absolute;
+            top:50px;
+            left:100px;
+            width:100px;
+            height: 100px;
+            background-color: aqua;
+        }
+
+        /* Cuerpo */
+        .cuerpo {
+            background-color: #f5f2ed;
+            border-bottom: 5px solid #004173;
+        }
+
+        .planes {
+            margin-top: 8vh;
+            margin-bottom: 2vh;
+            padding: 1.5rem;
+            background-color: white;
+            border-top: 3px solid #004173;
+        }
+
+        .planes h2 {
+            border-bottom: 1px dotted black;
+            padding-bottom: 2rem;
+            margin-bottom: 1rem;
+        }
+        .planes p{
+            line-height: 1.5;
+        }
+
+        /* Pie */
+        .pie{
+            padding-top:1rem;
+            padding-bottom: 3rem;
+        }
+
+        .pie li{
+            display:inline-block;
+            padding-right: 0.5rem;
+            padding-left:0.5rem;
+        }
+        .pie a, .pie p{
+            text-decoration: none;
+            color:black;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        .pie p{
+            padding-top: 1rem;
+        }
+        
+        
+    </style>
+</head>
+
+<body>
+    <header class="foto ">
+        <div class="negro">
+            <div class="centrado ">
+                <ul>
+                    <li style="text-transform: uppercase;">
+                        <a href="">cambiar tamaño del texto</a>
+                    </li>
+                    <li><a href="">Idioma Español</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="sombra">
+            <div class="centrado">
+                <ul>
+                    <li><a href="">Comuníquese con nosotros</a></li>
+                    <li><a href="">FAQs</a></li>
+                    <li><a href="">Cómo comunicarse con su plan de salud o plan dental</a></li>
+                    <li><a href="">Materiales de muestra para miembros</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="page ">
+            <div class="info contenido ">
+                <p class="col-3 borde">Healthy Louisiana está aquí para ayudarle a elegir los mejores planes de salud y
+                    planes dentales, los
+                    médicos y proveedores dentales para usted y su familia.</p>
+                <div class="col-3 borde">
+                    <h2>Entérese</h2>
+                    <p>Healthy Louisiana está aquí</p>
+                </div>
+                <div class="col-3 borde">
+                    <h2>Elija</h2>
+                    <p>Healthy Louisiana está aquí</p>
+                </div>
+                <div class="col-3">
+                    <h2>Inscríbase</h2>
+                    <p>Healthy Louisiana está aquí</p>
+                </div>
+            </div>
+        </div>
+
+    </header>
+    <main class="cuerpo">
+        <div class="page">
+            <div class="contenido abajo">
+                <div class="planes col-3">
+                    <h2>
+                        Cambios a los planes de salud de Medicaid en 2026
+                    </h2>
+                    <p>
+                        Louisiana Medicaid no ofrecerá UnitedHealthcare a partir del 1 de abril de 2026. Obtenga más
+                        información sobre esta actualización. </p>
+                </div>
+                <div class="planes col-3">
+                    <h2>
+                        ¿Preguntas sobre su elegibilidad para Medicaid de Louisiana?
+
+                    </h2>
+                    <p>
+                        Llame a servicios al cliente de Medicaid de Louisiana al 1-888-342-6207, de lunes a viernes de
+                        8:00 a.m. a 4:30 p.m. También puede tomar una decisión sobre su elegibilidad para Medicaid en
+                        cualquier momento en MyMedicaid.la.gov.
+                    </p>
+                </div>
+                <div class="planes col-3">
+                    <h2>
+                        Obtenga la aplicación para teléfono móvil (celular)
+                    </h2>
+                    <p>
+                        Para obtener la aplicación, busque Healthy Louisiana en Google Play o en App Store.
+                        Use la aplicación para elegir un plan de salud y un proveedor.
+
+                        Usted también puede:
+                    <ul>
+                        <li>Usar la aplicación en español</li>
+                        <li>Encontrar proveedores de acuerdo con su ubicación actual</li>
+                        <li>Recibir instrucciones para llegar a los proveedores</li>
+                        <li>¡Y mucho más!</li>
+                    </ul>
+                    Entérese más sobre la aplicación gratuita para teléfono móvil (celular) en la página de
+
+                    Preguntas frecuentes (FAQ).
+                    </p>
+                </div>
+                <div class="planes col-3">
+                    <h2>Miembros nuevos de Healthy Louisiana</h2>
+                    <p>Si quiere cambiar su plan de salud o plan dental, de manera que su nuevo plan comience el 1 de
+                        julio de 2026, usted deberá hacer el cambio antes de las 6 p.m. del 29 de junio de 2026.</p>
+                    <p>
+                        Si usted hace el cambio después del 29 de junio, su nuevo plan de salud comenzará el 1 de agosto
+                        de 2026.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div class="pie centrado">
+        <ul>
+            <li><a href="">Comuníquese con nosotros</a></li>|
+            <li><a href="">Declaración de privacidad</a></li>|
+            <li><a href="">Mapa del sitio</a></li>|
+            <li><a href="">Términos y condiciones sobre mensajes de texto</a></li>
+        </ul>
+        <p>© 2026 Created by Maximus®</p>
+    </div>
+</body>
+
+</html>

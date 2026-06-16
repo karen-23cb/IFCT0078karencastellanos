@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AstroWind Clone - Full Grid Layout</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #6d28d9;
+            --text: #111827;
+            --muted: #6b7280;
+            --border: #e5e7eb;
+        }
+
+        body {
+            font-family: system-ui, sans-serif;
+            color: var(--text);
+            background: white;
+        }
+
+        /* TOP BAR */
+        .topbar {
+            background: black;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            padding: .7rem 2rem;
+            font-size: .85rem;
+        }
+
+        /* OUTER LAYOUT */
+        .page {
+            display: grid;
+            grid-template-columns:
+                minmax(20px, 1fr) minmax(0, 1200px) minmax(20px, 1fr);
+        }
+
+        /* MAIN GRID */
+        .contenido {
+            grid-column: 2;
+
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 24px;
+        }
+
+        /* COLUMNS */
+        .col-12 {
+            grid-column: span 12;
+        }
+
+        .col-8 {
+            grid-column: span 8;
+        }
+
+        .col-6 {
+            grid-column: span 6;
+        }
+
+        .col-4 {
+            grid-column: span 4;
+        }
+
+        .col-3 {
+            grid-column: span 3;
+        }
+
+        /* HEADER */
+        .header {
+            grid-column: span 12;
+
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            align-items: center;
+
+            position: sticky;
+            top: 0;
+
+            background: white;
+            z-index: 1000;
+
+            min-height: 80px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .logo {
+            grid-column: span 3;
+            font-weight: 700;
+        }
+
+        .menu {
+            grid-column: span 6;
+            text-align: center;
+        }
+
+        .menu a {
+            margin: 0 .7rem;
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        .actions {
+            grid-column: span 3;
+            text-align: right;
+        }
+
+        .btn {
+            padding: .7rem 1.2rem;
+            border-radius: 999px;
+            border: none;
+            background: black;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .about {
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: bold;
+            color: rgb(18 85 200);
+        }
+
+        /* HERO */
+        .hero-title {
+            grid-column: 2 / span 10;
+            text-align: center;
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            line-height: 1;
+            font-weight: 800;
+        }
+
+        .hero-text {
+            grid-column: 3 / span 8;
+            text-align: center;
+            color: var(--muted);
+        }
+
+        .hero-image {
+            grid-column: 2 / span 10;
+            width: 100%;
+            border-radius: 16px;
+        }
+
+        /* SECTION */
+        .section-title {
+            grid-column: span 12;
+            text-align: center;
+            margin-top: 5rem;
+        }
+
+        /* STATS */
+        .stat {
+            /* background:#faf5ff;
+    border-radius:16px; */
+            padding: 2rem;
+            text-align: center;
+
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        /* TEAM */
+        .card {
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .card img {
+            width: 100%;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        /* FOOTER */
+        .footer {
+            grid-column: span 12;
+
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+
+            border-top: 1px solid var(--border);
+            margin-top: 6rem;
+            padding: 3rem 0;
+
+            gap: 24px;
+        }
+
+        .footer-col {
+            grid-column: span 3;
+        }
+
+        .footer h4 {
+            margin-bottom: 1rem;
+        }
+
+        .footer a {
+            display: block;
+            text-decoration: none;
+            color: var(--muted);
+            margin: .4rem 0;
+            font-size: .95rem;
+        }
+
+        .footer a:hover {
+            color: var(--primary);
+        }
+
+        /* RESPONSIVE */
+        @media(max-width:768px) {
+            .contenido {
+                gap: 16px;
+            }
+
+            .col-12,
+            .col-8,
+            .col-6,
+            .col-4,
+            .col-3,
+            .hero-title,
+            .hero-text,
+            .hero-image {
+                grid-column: span 12;
+            }
+
+            .header {
+                position: static;
+            }
+
+            .logo,
+            .menu,
+            .actions {
+                grid-column: span 12;
+                text-align: center;
+            }
+
+            .footer-col {
+                grid-column: span 12;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="topbar">
+        <span>NEW Astro v6 is now available »</span>
+        <span>GitHub ★ 5.7K</span>
+    </div>
+
+    <div class="page">
+
+        <main class="contenido">
+
+            <!-- HEADER -->
+            <header class="header">
+
+                <div class="logo">🚀 AstroWind</div>
+
+                <nav class="menu">
+                    <a href="#">Homes</a>
+                    <a href="#">Pages</a>
+                    <a href="#">Landing</a>
+                    <a href="#">Blog</a>
+                    <a href="#">Widgets</a>
+                </nav>
+
+                <div class="actions">
+                    <button class="btn">Download</button>
+                </div>
+
+            </header>
+
+            <!-- HERO -->
+            <h1 class="hero-title">
+                Build modern websites with
+                <span style="color:var(--primary)">beautiful templates</span>
+            </h1>
+
+            <p class="hero-text">
+                A clean layout system built entirely with a single CSS Grid of 12 columns.
+            </p>
+
+            <img class="hero-image" src="https://picsum.photos/1200/650" alt="hero">
+
+            <!-- STATS -->
+            <h2 class="section-title">Statistics</h2>
+
+            <div class="stat col-3">
+                <div class="stat-number">4</div>Offices
+            </div>
+            <div class="stat col-3">
+                <div class="stat-number">248</div>Employees
+            </div>
+            <div class="stat col-3">
+                <div class="stat-number">12</div>Templates
+            </div>
+            <div class="stat col-3">
+                <div class="stat-number">24</div>Awards
+            </div>
+
+            <!-- FIND US -->
+            <div class="col-12 about">
+                Find us
+            </div>
+
+            <h2 class="section-title">Our locations</h2>
+            <div class="col-3">
+                <h3>Primera</h3>
+                <p>1234 Lorem Ipsum St, 12345, Miami</p>
+            </div>
+
+            <div class="col-3">
+                <h3>Primera</h3>
+                <p>1234 Lorem Ipsum St, 12345, Miami</p>
+            </div>
+            <div class="col-3">
+                <h3>Primera</h3>
+                <p>1234 Lorem Ipsum St, 12345, Miami</p>
+            </div>
+            <div class="col-3">
+                <h3>Primera</h3>
+                <p>1234 Lorem Ipsum St, 12345, Miami</p>
+            </div>
+
+
+
+
+
+
+            <!-- TEAM -->
+            <h2 class="section-title">Team</h2>
+
+            <div class="card col-4">
+                <img src="https://picsum.photos/400/300?1">
+                <div class="card-content">
+                    <h3>Sarah</h3>
+                    <p>CEO</p>
+                </div>
+            </div>
+
+            <div class="card col-4">
+                <img src="https://picsum.photos/400/300?2">
+                <div class="card-content">
+                    <h3>Michael</h3>
+                    <p>Design</p>
+                </div>
+            </div>
+
+            <div class="card col-4">
+                <img src="https://picsum.photos/400/300?3">
+                <div class="card-content">
+                    <h3>Emma</h3>
+                    <p>Dev</p>
+                </div>
+            </div>
+
+            <!-- FOOTER -->
+            <footer class="footer">
+
+                <div class="footer-col">
+                    <h4>Product</h4>
+                    <a href="#">Features</a>
+                    <a href="#">Pricing</a>
+                    <a href="#">Releases</a>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <a href="#">About</a>
+                    <a href="#">Careers</a>
+                    <a href="#">Press</a>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <a href="#">Blog</a>
+                    <a href="#">Docs</a>
+                    <a href="#">Help Center</a>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                    <a href="#">Cookies</a>
+                </div>
+
+            </footer>
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>
