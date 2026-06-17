@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,7 +15,7 @@
         de varias lineas
         */
 
-        const COLOR="verde";
+        const COLOR = "verde";
 
 
         let estudiante = "paco garcia";
@@ -22,19 +23,74 @@
         let nota = 10.5;
 
 
+        let anio = 2026;
+
+
     </script>
 
     <script src="archivo.js"></script>
 </head>
+
 <body>
 
 
 
-    <button onclick="console.log('estudiante: ' + estudiante);console.log('materia: ' + asignatura);console.log('calificacion: ' + nota);">
+    <button
+        onclick="console.log('estudiante: ' + estudiante);console.log('materia: ' + asignatura);console.log('calificacion: ' + nota);">
         datos del estudiante
-                                                                           
+
     </button>
 
-    
+    <button onclick="let edad = prompt('dime tu edad',33); alert('tu edad es' + edad);
+    ">
+        pregunta
+
+    </button>
+
+    <button onclick="
+    let acuerdo = confirm('¿esta de acuerdo?');alert(acuerdo);
+    ">
+        confirm
+    </button>
+    <BR>
+    </BR>
+    comparacion
+    <UL>
+        <LI>Mayor A > B</LI>
+        <LI>Menor A < b</LI>
+        <LI>Igualdad A == B</LI>
+        <LI>Igualdad estricta a===b</LI>
+    </UL>
+
+
+
+    <button onclick="alert(12 > 10)">
+        MAYOR
+
+
+
+    </button>
+
+    <button onclick="
+    let ahora = prompt('dime el año actual',2026);
+    if(anio == ahora) alert('El año es correcto');">
+        IF
+    </button>
+
+    <button onclick="
+    ahora = prompt('dime el año actual',2026);
+    if(anio == ahora) {
+    alert('El año es correcto');}
+    else{
+        alert('El año es incorrecto');
+    }
+     ">
+        IF ELSE
+    </button>
+
+
+
+
 </body>
+
 </html>
