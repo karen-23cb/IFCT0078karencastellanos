@@ -1,183 +1,275 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Introduccion a JavaScript</title>
+    <title>Introducción a javascript</title>
     <script>
-        //esto es un comentario de una linea
+        // Esto es un comentario de una linea
 
         /*
-        esto
-        es
+        esto 
+        es 
         un comentario
         de varias lineas
         */
+        /*
+               const COLOR = "azul";
+        
+               let nombre = "Daniela 'juncal flamenco' ";
+               let edad = 21;
+               let temperatura = 12;
+               let numero = 873;
+               
+               console.log(temperatura);
+               temperatura = 200;
+               temperatura = -1;
+               console.log(temperatura);
+        
+               // define 
+               let curso;
+        
+               // inicializa
+               curso = "Desarrollo web";
+        
+               // utiliza
+               console.log(curso);
+        
+        */
+        let estudiante = "Paco García";
+        let asignatura = "Matemáticas";
+        let nota = 6.25;
 
-        const COLOR = "verde";
+        // Lado del cuadrado
+        let lado = 22.43;
+        let cuadrado = lado * lado;
 
 
-        let estudiante = "paco garcia";
-        let asignatura = "Ciencias";
-        let nota = 10.5;
+        // Precio con IVA
+        const IVA = 0.21;
+        let precio = 100;
+        //let total = precio + precio * IVA;
+        let total = precio * (1 + IVA);
 
+        // ----------------------
+
+        // En lenguaje C
+        // int x ;
+        // x = "hola";
 
         let anio = 2026;
 
+        // obsoleto
+        var nombre_variable = 0;
+
 
     </script>
-
-    function sumatorio()
-    {
-    let total = 0;
-    for(let i = 1; i <= 100; 1++){
-        total = sumar (i,total);
-    }
- } 
- return total 
-    <script src="archivo.js">
-        </script>
 </head>
 
 <body>
-
-
-
-    <button
-        onclick="console.log('estudiante: ' + estudiante);console.log('materia: ' + asignatura);console.log('calificacion: ' + nota);">
-        datos del estudiante
-
+    <button onclick="
+                    console.log('Estudiante: ' + estudiante);
+                    console.log('Materia: ' + asignatura);
+                    console.log('Calificación: ' + nota);">
+        Datos del estudiante
     </button>
 
-    <button onclick="let edad = prompt('dime tu edad',33); alert('tu edad es' + edad);
-    ">
-        pregunta
-
+    <button onclick="console.log('Area: ' + cuadrado);">
+        Área del Cuadrado
+    </button>
+    <button onclick="console.log(total)">
+        IVA
     </button>
 
     <button onclick="
-    let acuerdo = confirm('¿esta de acuerdo?');alert(acuerdo);
-    ">
-        confirm
-    </button>
-    <BR>
-    </BR>
-    comparacion
-    <UL>
-        <LI>Mayor A > B</LI>
-        <LI>Menor A < b</LI>
-        <LI>Igualdad A == B</LI>
-        <LI>Igualdad estricta a===b</LI>
-    </UL>
-
-
-
-    <button onclick="alert(12 > 10)">
-        MAYOR
-
-
-
+                    let edad = prompt('Dime tu edad',33);
+                    alert('Tu edad es ' + edad);
+                    ">
+        Pregunta
     </button>
 
     <button onclick="
-    let ahora = prompt('dime el año actual',2026);
-    if(anio == ahora) alert('El año es correcto');">
+                    let acuerdo = confirm('¿Está de acuerdo?');
+                    alert(acuerdo);">
+        Confirm
+    </button>
+    <br><br>
+
+    Comparación:
+    <ul>
+        <li>Mayor que A > B </li>
+        <li>Menor que A < B</li>
+        <li>Igualdad A == B</li>
+        <li>Igualdad estricta A === B</li>
+    </ul>
+
+
+
+    <button onclick="alert('10' === 10)">
+        Mayor
+    </button>
+
+
+    <button onclick="
+                    let ahora = prompt('Dime el año actual',2026);
+                    if(anio == ahora) alert('El año es correcto');
+                    ">
         IF
     </button>
 
     <button onclick="
-    ahora = prompt('dime el año actual',2026);
-    if(anio == ahora) {
-    alert('El año es correcto');}
-    else{
-        alert('El año es incorrecto');
-    }
-     ">
-
-
+                    ahora = prompt('Dime el año actual',2026);
+                    if(anio == ahora) {
+                        alert('El año es correcto');
+                    }
+                    else{
+                        alert('El año es incorrecto');
+                    }
+                    ">
         IF ELSE
     </button>
-
-    <button onclick=" for(let i = 0; i < 10; i++){
-        console.log('i:' + i);
-    }
-    ">
-        bucle for
-
+    <button onclick="
+                    for(let i = 0; i < 10; i++){
+                        console.log('i: ' + i);
+                    }
+                    console.log('FIN')">
+        Bucles FOR
     </button>
 
-    <button onclick=" for(let i = 10; i > 0; i--){
-        console.log('i:' + i);
-    }
-    ">
-        bucle for decreciente
-
+    <button onclick="
+                    for(let i = 10; i > 0; i--){
+                        console.log('i: ' + i);
+                    }">
+        Bucles FOR decreciente
     </button>
 
-    <button onclick=" for(let i = 0; i < 100; i+=2){
-        console.log('i:' + i);
-    }
-    ">
-        pares 0-100
-
+    <button onclick="
+                    for(let i = 0; i < 100; i += 2){
+                        console.log('i: ' + i);
+                    }">
+        Pares 0-100
     </button>
 
-    <button onclick=" for(let i = 1; i < 100; i+=2){
-        console.log('i:' + i);
-    }
-    ">
-        impares 0-100
-
+    <button onclick="
+                    for(let i = 100; i > 0; i -= 2){
+                        console.log('i: ' + i);
+                    }">
+        Pares 0-100 decrecientes
     </button>
 
-
-    <button onclick=" for(let i = 100; i > 0; i-=2){
-        console.log('i:' + i);
-    }
-    ">
-        decrecientes 0-100
-
-
+    <button onclick="
+                    let contador = 0;
+                    while (contador <= 100) {
+                        console.log('Contador: ' + contador);
+                        contador += 2;
+                        
+                    }
+                    ">
+        Bucles while
     </button>
 
-
-    <h4>4. calcular la suma de los numeros enteros entre 1 y 100</h4>
-
-    <button onclick=" let suma =0;
-   for(let i = 1; i<=100; i++){
-    suma = suma + i;
-   }
-    alert('la suma con FOR es' + suma);
-
-    
-    // con bucle while
-suma = 0;
-let ct =1;
-while(ct <= 100){
-    suma += ct;
-    ct ++;
-}
-alert ('la suma con WHILE es' + suma)
-">
-        suma
-    </button onclick="let t = sumatorio();
-    alert(t);">
-
-    suma 1-100 con funcion
-
-
-    <button>
-
+    <hr>
+    <h2>Ejercicios</h2>
+    <h4>1. Pedir un número al usuario y decir si es positivo o negativo</h4>
+    <button onclick="
+                   let numero = prompt('Dime un numerito',0);
+                   if(numero > 0){
+                        alert('El número ' + numero + ' es POSITIVO');
+                   }
+                   else{
+                        if(numero==0){
+                            alert('El número ' + numero + ' es CERO');
+                        }
+                        else{
+                            alert('El número ' + numero + ' es NEGATIVO');
+                            }
+                   }
+                   ">
+        mayor o menor
     </button>
 
+    <h4>2. Dada la nota de un examen, calcular la calificación</h4>
 
+    <button onclick="
+                let nota_examen = prompt('Dime la nota');
+                if(nota_examen < 5){
+                    alert('SUSPENSO');
+                }
+                else{
+                    if(nota_examen < 7){
+                        alert('APROBADO');
+                    }
+                    else{
+                        if(nota_examen < 9){
+                            alert('NOTABLE');
+                        }
+                        else{
+                            alert('SOBRESALIENTE');
+                        }
+                    }
+                }
+ ">
+        Calificación
+    </button>
 
+    <h4>3. Adivina el número: Dado un número, intentar adivinarlo en 5 intentos.</h4>
+    <button onclick="
+                const OBJETIVO = Math.floor(Math.random() * 100) + 1;
+                console.log(OBJETIVO);
 
+                const LIMITE = 5;
 
+                let acierto = false;
+                let intentos = 1;
+                
+                let numero_candidato = prompt('¿Cual es el numerito?');
 
+                while(!acierto && intentos <= LIMITE){
+                    
+                    if(numero_candidato == OBJETIVO){
+                        acierto = true;
+                        alert('¡¡¡ENHORABUENA!!! has acertado');
+                    }
+                    else{
+                        if(intentos < LIMITE){
+                            numero_candidato = prompt('Fallo. Te quedan ' +  (LIMITE-intentos) + ' intentos');
+                        }
+                    }
+                    intentos ++;
+                }
 
+                if(!acierto){
+                    alert('Fin de la partida. El número era ' +  OBJETIVO);
+                }
 
+   ">
+
+        Adivina el número
+    </button>
+
+    <h4>4. Calcular la suma de los números enteros entre 1 y 100</h4>
+    <button onclick="
+        let suma = 0;
+        for(let i = 1; i<=100; i++){
+            //suma = suma + i;
+            suma += i;
+        }
+        alert('La suma con FOR es ' + suma) ;
+
+        // con bucle while
+        suma = 0;
+        let ct = 1;
+        while(ct <= 100){
+            suma += ct;
+            ct ++;
+        }
+        alert('La suma con WHILE es ' + suma);
+
+    "
+    >
+        Suma
+    </button>
 
 
 </body>

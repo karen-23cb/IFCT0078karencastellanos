@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="primero">
+        Hola Caracola
+    </div>
+
+    <button onclick="amarillo()">
+        Amarillo
+    </button>
+
+    <button onclick="cambia_texto()">
+        Texto Nuevo
+    </button>
+
+    <button onclick="mas_grande()">
+        +
+    </button>
+
+    <button onclick="mas_chico()">
+        -
+    </button>
+
+
+    <script>
+        function amarillo(){
+            let primero= document.getElementById('primero');
+            //primero.style.backgroundColor='yellow';
+
+            if(primero.style.backgroundColor == 'yellow'){
+                primero.style.backgroundColor = 'green'
+            }
+            else{
+                primero.style.backgroundColor = 'yellow';
+            }
+
+        }
+        function cambia_texto(){
+        let primero= document.getElementById('primero');
+        primero.innerText="Texto nuevo";
+        }
+
+        function mas_grande(){
+           let primero= document.getElementById('primero');
+           primero.style.fontSize ='10rem';
+        }
+        function mas_chico(){
+           let primero= document.getElementById('primero');
+           primero.style.fontSize ='1rem';
+        }
+
+
+    </script>
+</body>
+</html>
