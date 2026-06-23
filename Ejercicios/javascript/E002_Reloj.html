@@ -1,25 +1,32 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reloj</title>
+    <style>
+        @font-face {
+            font-family: "seven";
+            src: url("fuentes/fs-sevegment.otf.woff2") format("woff2");
+        }
+        div{
+            font-family: 'seven', sans-serif ;
+            font-size: 3rem;
+        }
+    </style>
+  
     <script>
+
         let manejador;
 
-
-        function muestra_hora() {
+        function muestra_hora(){
             let fecha = new Date();
-
-
-            //let reloj = document.getElementById('reloj');
-            //reloj.innerHTML = fecha;
-
+           // let reloj = document.getElementById('reloj');
+           // reloj.innerHTML = fecha;
             let horas = fecha.getHours();
             let minutos = fecha.getMinutes();
-            let segundos = fecha.getSeconds()
-
+            let segundos = fecha.getSeconds();
+            
             let span_horas = document.getElementById('horas');
             let span_minutos = document.getElementById('minutos');
             let span_segundos = document.getElementById('segundos');
@@ -33,26 +40,23 @@
             manejador = setInterval(muestra_hora,1000);
         }
 
-
-    </script>
-
+    </script>  
 </head>
-
 <body>
     <div id="reloj">
-        <span id="horas">00</span> : 
-        <span id="minutos">00</span> :
-        <span id="segundos">00</span>
-
+        <div>
+            <span id="horas">00</span>:<span id="minutos">00</span>:<span id="segundos">00</span> 
+        </div>
     </div>
+    
+
+
+
+
+
     <button onclick="iniciar()">
         iniciar
     </button>
 
-
-
-
-
 </body>
-
 </html>

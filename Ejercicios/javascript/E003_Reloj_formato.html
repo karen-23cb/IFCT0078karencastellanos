@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reljo con formato</title>
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            height: 100vh;
+            background-color: rgb(226, 217, 206);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .contenedor {
+            width: 900px;
+            border: 10px solid black;
+            border-radius: 9px;
+            background-color: #d8dece;
+            padding: 25px;
+        }
+
+        .arriba {
+            display: grid;
+            grid-template-columns: 80px 1fr 80px;
+            align-items: center;
+
+
+        }
+
+        .mna {
+            font-size: 40px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .hora-min {
+            display: grid;
+            grid-template-columns: auto 0.55em auto;
+            justify-content: center;
+            align-items: center;
+
+            font-family: "seven", monospace;
+            font-size: 150px;
+
+
+        }
+
+        #segundos {
+            font-family: "seven", monospace;
+            font-size: 60px;
+
+
+        }
+
+        .linea {
+            height: 3px;
+            margin: 20px 0;
+            background-color: black;
+
+
+        }
+
+        .abajo {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+
+        }
+
+        .celda{
+            text-align: center;
+
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <div class="contenedor">
+
+        <div class="arriba">
+            <div class="mna" id="ampm">AM</div>
+            <div class="hora-min" id="reloj">
+                <span id="hora">00</span>
+                <span id="puntos">:</span>
+                <span id="minutos">00</span>
+            </div>
+            <div class="segs" id="segundos">00</div>
+        </div>
+
+        <div class="linea"></div>
+
+        <div class="abajo">
+            <div class="celda">
+                <div class="etiqueta">DIA</div>
+                <div id="diames" class="valor"></div>
+
+            </div>
+            <div class="celda">
+                <div class="etiqueta">MES</div>
+                <div id="mes" class="valor"></div>
+            </div>
+            <div class="celda">
+                <div class="etiqueta">DIA SEM.</div>
+                <div id="diasem" class="valor"></div>
+            </div>
+        </div>
+
+
+
+    </div>
+</body>
+
+</html>
