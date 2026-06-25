@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulación del DOM</title>
+    <script>
+        function inserta(){
+            const contenedor = document.getElementById('contenedor');
+
+            const nuevo = document.createElement('p');
+            nuevo.textContent = "Este párrafo ha sido creado dinámicamente";
+
+            contenedor.appendChild(nuevo);
+        }
+
+        function nuevo_ejercicio(){
+            const lista = document.getElementById('ejercicios');
+            for(let i = 1; i <= 10; i++){
+                const nuevo = document.createElement('li');
+                nuevo.id = "Ej_" + i;
+                nuevo.innerHTML = "Ejercicio " + i ;
+
+                const boton = document.createElement('button');
+                boton.innerText = "Borrar";
+                boton.onclick = function(){borra_elem(nuevo.id)};
+
+                nuevo.appendChild(boton);
+
+                lista.appendChild(nuevo);
+            }
+        }
+        function borra_elem(objetivo){
+            const obj = document.getElementById(objetivo);
+            const lista = obj.parentNode;
+            lista.removeChild(obj);
+
+        }
+    </script>
+</head>
+<body>
+    <h1>Contenedor</h1>
+    <div id="contenedor">vacio</div>
+
+    <button onclick="inserta()">
+        Nuevo párrafo
+    </button>
+    <button onclick="borra_elem('contenedor')"> Borrar contenedor</button>
+
+    <h2>Ejercicios</h2>
+    <ul id="ejercicios"></ul>
+
+    <button onclick="nuevo_ejercicio()">
+        Nuevo ejercicio
+    </button>
+
+</body>
+</html>
