@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -10,8 +10,16 @@
         * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
 
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            padding-top: 20vh;
+            /* background-color: rgba(245, 245, 220, 0.678); */
+        }
 
         h1 {
             text-align: center;
@@ -22,52 +30,69 @@
             margin-top: 1rem;
         }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            display: flex;
-            justify-content: center;
-            padding-top: 20vh;
-            background-color: rgb(198, 214, 235);
+        /* Color para elementos pares */
+        ul li:nth-child(even) {
+            background-color: #8877c4;
+        }
 
+        /* Color para elementos impares */
+        ul li:nth-child(odd) {
+            background-color: #8a4fbb7a;
         }
 
         li {
-            list-style: none;
-            color: blue;
             display: grid;
+            align-items: center;
             grid-template-columns: 1rem 1fr auto;
             gap: 10px;
-            line-height: 2.4;
-            align-items: center;
-            border-bottom: 1px solid rgba(128, 128, 128, 0.315);
+
+            list-style: none;
+            color: black;
+            line-height: 1.8;
+            border-bottom: 1px solid rgb(187, 186, 186);
+            padding: 5px;
 
         }
 
         li button {
-            height: fit-content;
             padding: 3px;
+            height: fit-content;
+            background-color: #3f4ae0b6;
+            color: white;
+            border: none;
+            border-radius: 3px;
+
         }
 
-        .app {
+        li.tachado span {
+            text-decoration: line-through;
+            color: grey;
+        }
 
+
+
+        .app {
             min-height: 40vh;
             min-width: 40vw;
             border: 2px solid black;
-            padding: 20px;
             border-radius: 10px;
-            background-color: rgba(162, 184, 167, 0.267);
+            padding: 20px;
+
+
         }
 
         .editor {
-            border: 1px solid gray;
+            border-bottom: 1px solid rgb(196, 195, 195);
             padding: 20px;
-            display: flex;  
+            display: flex;
             gap: 5px;
 
         }
 
-        .editor input {
-            font-size: 1.3rem;
+        .editor input,
+        li input {
+            color: red;
+            font-size: 1.2rem;
             flex-grow: 3;
         }
 
@@ -76,33 +101,18 @@
             flex-grow: 1;
         }
 
-        .editor input, li input{
-            color: black;
-            padding-left: 10px;
-            font-size: 1.1rem;
-            display: flex;
-            flex-grow: 3;
-            background-color: aliceblue;
-            border-radius: 7px;
-        }
-
-
-
-        li.tachado span {
-            text-decoration: line-through;
-            color: gray;
-
-        }
+        /* https://desarrolloweb.com/articulos/estilos-css-campos-checkbox */
 
         .mycheck2 {
             cursor: pointer;
             background-color: #fff;
             color: #fff;
             background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e");
-            width: 24px;
-            height: 24px;
+            width: 18px;
+            height: 18px;
             appearance: none;
             border: 2px solid #888;
+            border-radius: 3px;
             background-position: 0 -2rem;
             background-size: 100%;
             background-repeat: no-repeat;
@@ -110,12 +120,10 @@
         }
 
         .mycheck2:checked {
-            background-color: rgb(15, 13, 156);
-            color: rgb(13, 15, 156);
+            background-color: rgb(68, 13, 156);
+            color: rgb(75, 156, 13);
             background-position: 0 0;
         }
-
-
     </style>
 
 </head>
@@ -124,28 +132,38 @@
     <div class="app">
         <h1>Mi lista de tareas</h1>
         <div class="editor">
-
-
             <input type="text" name="" id="nueva_tarea" placeholder="Nueva tarea">
-            <button onclick="crear_tarea()">Crear</button>
+            <button onclick="guardar_tarea()">Crear</button>
         </div>
-
+        <div class="botonera">
+            <button onclick="guardar_lista()">Guardar</button>
+            <button onclick="cargar_lista()">Cargar</button>
+            <button onclick="limpiar_lista()">Limpiar</button>
+        </div>
         <ul id="tareas"></ul>
     </div>
 
     <script>
-        function crear_tarea() {
+        function guardar_tarea(){
             const input = document.getElementById("nueva_tarea");
             const texto = input.value;
+
+            crear_tarea(texto);
+
+            input.value = "";
+            input.focus();
+        }
+
+        function crear_tarea(texto_tarea) {
 
             const li = document.createElement('li');
             const check = document.createElement('input');
             check.type = "checkbox";
-            check.className = "mycheck2"
+            check.className = "mycheck2";
             check.onclick = function () { alternar(this); }
 
             const span = document.createElement('span');
-            span.innerHTML = texto;
+            span.innerHTML = texto_tarea;
             span.onclick = function () { editar_tarea(this); }
 
             const boton = document.createElement('button');
@@ -159,14 +177,16 @@
             const lista = document.getElementById("tareas");
             lista.appendChild(li);
 
-            input.value = "";
+            //lista.prepend(li);
 
         }
+        
         function borrar_tarea(boton) {
             const li = boton.parentNode;
             li.parentNode.removeChild(li);
 
         }
+        
         function alternar(casilla) {
             const li = casilla.parentNode;
             if (casilla.checked) {
@@ -197,6 +217,37 @@
             input.focus();
 
         }
+        
+        function guardar_lista() {
+            const tareas = document.getElementById("tareas");
+            let elementos = tareas.getElementsByTagName('span');
+            let lista = [];
+
+            for (let i = 0; i < elementos.length; i++) {
+                lista.push(elementos[i].innerHTML);
+            }
+
+            localStorage.setItem('mis_tareas', JSON.stringify(lista));
+        }
+
+        function cargar_lista() {
+            let datos = localStorage.getItem('mis_tareas');
+            let lista_guardada = JSON.parse(datos);
+
+            limpiar_lista();
+
+            for (let i = 0; i < lista_guardada.length; i++){
+                crear_tarea(lista_guardada[i]);
+            }
+        }
+
+        function limpiar_lista(){
+            const tareas = document.getElementById("tareas");
+            tareas.innerHTML = "";
+
+        }
+        
+
     </script>
 </body>
 
