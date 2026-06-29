@@ -1,107 +1,100 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu Hamburguesa</title>
+    <title>Menú hamburguesa</title>
     <style>
-        *{margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: Arial, Helvetica, sans-serif;
-
-    }
-
-    body{
-        background-color: rgba(207, 178, 206, 0.726);
-        color: white;
-        line-height: 1.6;
-    }
-
-    header{
-        background-color: rgb(155, 129, 179);
-        color: white;
-        position: relative;
-    }
-
-    nav{
-        max-width: 1000px;
-        margin:auto;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 15px;
-
-
-    }
-
-    .logo{
-        font-size: 30px;
-        font-weight: bold;
-
-    }
-    /*MENU*/
-
-    #menu{
-        list-style: none;
-        display: flex;
-        gap: 25px;
-    }
-
-    #menu a{
-        text-decoration: none;
-        color: white;
-    }
-
-    #menu a:hover{
-        color: rgb(71, 32, 71);
-    }
-
-    /*boton hamburguesa*/
-    #hamburguesa{
-        display: none;
-        font-size: 28px;
-        background: none;
-        border: none;
-        color: white;
-        cursor: pointer;
-    }
-
-    /*MENU EN MOVILES*/
-    @media(max-width:700px){
-        #hamburguesa{
-            display: block;
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body{
+            background-color: rgb(241, 243, 243);
+            color:rgb(0, 0, 0);
+            line-height: 1.6;
+        }
+        header{
+            background-color: rgb(17, 17, 90);
+            color:white;
+            position:relative;
+        }
+        nav{
+            max-width: 1000px;
+            margin:auto;
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+            padding:15px;
+            
+        }
+        .logo{
+            font-size: 42px;
+            font-weight: bold;
         }
 
+        /* Menú */
+
         #menu{
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-           
-            width: 100%;
-            background-color: rgb(94, 88, 105);
-            flex-direction: column;
+            list-style: none;
+            display:flex;
+            gap:25px;
+        }
 
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.103);
-        }    
-        #menu li{
-        margin: 0;
-        border-top: 1px solid black;
-    }
+        #menu a{
+            text-decoration: none;
+            color:white;
+        }
 
-    #menu a{
-        display: block;
-        padding: 15px;
-    }
+        #menu a:hover{
+            color: #60a5fa;
+        }
 
+        /* Botón hamburguesa */
 
-    }
+        #hamburguesa{
+            display:none;
+            font-size:28px;
+            background: none;
+            border:none;
+            color:white;
+            cursor:pointer;
 
+        }
 
+        /* Menú en móviles */
 
+        @media (max-width:700px){
+             #hamburguesa{
+                display:block;
+             }
 
+             #menu{
+                display:none;
+                position: absolute;
+                top:100%;
+                left:0;
 
+                width:100%;
+                background-color: #374151;
+                flex-direction: column;
+
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+
+             }
+
+             #menu li{
+                margin:0;
+                border-top: 1px solid black;
+             }
+             #menu a{
+                display:block;
+                padding:15px;
+             }
+
+        }
 
     </style>
 </head>
@@ -113,48 +106,47 @@
             <ul id="menu">
                 <li><a href="">Archivo</a></li>
                 <li><a href="">Editar</a></li>
-                <li><a href="">Seleccion</a></li>
+                <li><a href="">Selección</a></li>
                 <li><a href="">Ver</a></li>
                 <li><a href="">Ayuda</a></li>
-            
             </ul>
         </nav>
     </header>
-
-    <script>
-        const boton = document.getElementById("hamburguesa");
-        const menu = document.getElementById("menu");
-
-        boton.addEventListener("click",cambia_menu);
-        window.addEventListener("resize",restaura_menu);
-
-        function cambia_menu(){
-            if(menu.style.display == "flex"){
-                menu.style.display = "none";
-            }
-            else{
-                menu.style.display = "flex";
-                menu.style.flexDirection = "column";
-
-
-            }
-        }
-
-        function restaura_menu(){
-            if(window.innerWidth > 700){
-                menu.style.display = "flex";
-                menu.style.flexDirection = "row";
-
-            }        
-            else{
-                menu.style.display = "none";
-
-            }
-        }
-
-        restaura_menu();
-
-    </script>
     
+    <div>
+        <a href="mailto:fulanito@gmail.com"> Mándame un mensaje</a>
+    </div>
+
+<script>
+    const boton = document.getElementById("hamburguesa");
+    const menu = document.getElementById("menu");
+
+    boton.addEventListener("click",cambia_menu);
+    window.addEventListener("resize",restaura_menu);
+
+    function cambia_menu(){
+        if(menu.style.display == "flex"){
+            menu.style.display = "none";
+        }
+        else{
+            menu.style.display = "flex";
+            menu.style.flexDirection = "column";
+        }
+
+    }
+
+    function restaura_menu(){
+        if(window.innerWidth > 700){
+            menu.style.display = "flex";
+            menu.style.flexDirection = "row";
+        }
+        else{
+            menu.style.display = "none";
+        }
+    }
+
+    restaura_menu();
+
+</script>
 </body>
 </html>
