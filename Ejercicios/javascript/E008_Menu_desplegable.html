@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu desplegable</title>
+
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            background-color: aliceblue;
+            color: black;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+        }
+
+        /*cabecera*/
+
+        header{
+            background-color: #2d3748;
+            color: white;
+            box-shadow: 0 2px 6px rgba(56, 55, 55, 0.2);
+
+            
+        }
+
+        nav{
+            display: flex;
+
+        }
+
+        .menu{
+            position: relative;
+
+        }
+
+        .menu button{
+            background: none;
+            border: none;
+            color: white;
+            padding: 16px 20px;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        .menu button:hover{
+            background-color: #4a5568;
+
+        
+        }
+
+        /*menu desplegable*/
+
+        .submenu{
+            
+            position: absolute;
+            top: 100%;
+            left: 0;
+
+            
+            list-style: none;
+            width: 220px;
+            background-color: white;
+            color: black;
+
+
+            border-radius: 8px;
+            box-shadow: 0 8px 20px rgba(56, 55, 55, 0.2);
+            display: none;
+            z-index: 1000;
+
+        }
+
+        .submenu li{
+            padding: 12px 16px;
+            cursor: pointer;
+ 
+        }
+
+        .submenu li:hover{
+            background-color: rgba(207, 213, 218, 0.911);
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <div class="menu">
+                <button>Archivo</button>
+                <ul class="submenu">
+                    <li>Abrir</li>
+                    <li>Guardar</li>
+                    <li>Guardar como</li>
+                    <li>Cerrar</li>
+                </ul>
+            </div>
+            <div class="menu">
+                <button>Editar</button>
+                <ul class="submenu">
+                    <li>Copiar</li>
+                    <li>Pegar</li>
+                    <li>Cortar</li>
+                    <li>Deshacer</li>
+                </ul>
+            </div>
+
+        </nav>
+    </header>
+
+    <script>
+        //let botones = document.getElementsByTagName('button');
+        let botones = document.querySelectorAll('.menu button')
+        let menus = document.querySelectorAll('.submenu')
+
+        let menu_activo = null;
+
+
+        for(let i = 0; i < botones.length; i++){
+            botones[i].addEventListener('click',mostrar_menu);
+        }
+        
+        document.addEventListener('click',cerrar_menus);
+
+
+
+        function mostrar_menu(evento){
+        evento.stopPropagation();
+        let submenu = this.nextElementSibling;
+
+        if(menu_activo === submenu){
+            cerrar_menus();
+            return;
+
+        }
+        cerrar_menus();
+        submenu.style.display = 'block';
+        menu_activo = submenu;
+
+
+        }
+
+        function cerrar_menus(){
+            for(let i = 0; i < menus.length; i++){
+                menus[i].style.display = 'none';
+
+            }
+            menu_activo = null;
+
+
+        }
+    </script>
+</body>
+
+</html>
